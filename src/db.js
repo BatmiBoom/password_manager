@@ -13,7 +13,7 @@ class DB {
 	init() {
 		switch (this.type) {
 			case "SQLITE": {
-				const db = new sqlite3.Database(`${this.name}.db`);
+				const db = new sqlite3.Database(`db/${this.name}.db`);
 				db.serialize(() => {
 					db.run(
 						"CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT)",
